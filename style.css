@@ -97,13 +97,8 @@ header {
 }
 
 
-main{
-    display: flex;
-    flex-direction: row;
-}
-
-
 .last-solution {
+    flex: 1 1 50%;
     margin-left: var(--indent);
 }
 
@@ -165,8 +160,11 @@ main{
     margin: 0;
 }
 
+.flex-container {
+    display: flex;
+  }
 
-/* .form-wrapper {
+.form-wrapper {
     max-width: 400px;
     background-color: #f8f8f8;
     border-radius: 10px;
@@ -229,7 +227,7 @@ main{
   
   .form-footer a:hover {
     color: #3e8e41;
-  } */
+  }
 
 /* .button{
     margin-left: 500px;
