@@ -217,7 +217,7 @@ header {
 }
 
 .section {
-    padding: 10px;
+    padding: 15px;
     font-size: 16px;
     font-weight: bold;
     color: black;
@@ -229,8 +229,8 @@ header {
 
 .date {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 5;
+    left: 5;
     font-size: 14px;
     color: black;
     padding: 10px;
@@ -239,11 +239,11 @@ header {
 .description {
     font-size: 20px;
     color: black;
-    margin: 30px;
+    margin: 50px;
 }
 
 .views {
-    padding: 10px;
+    padding: 15px;
     font-size: 14px;
     position: absolute;
     bottom: 0;
