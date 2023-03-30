@@ -17,8 +17,8 @@
     <!-- <section class="first-section"> -->
     <header>
       <div class="logo">
-        <img src="/icons/city-improvement-low-resolution-logo-white-on-transparent-background.png" alt="Logo"
-          height="75px" width="105px" />
+        <a href="#" alt="???"><img src="/icons/city-improvement-low-resolution-logo-white-on-transparent-background.png"
+            alt="Logo" height="75px" width="105px" /> </a>
       </div>
 
       <div class="slogan">
@@ -31,7 +31,6 @@
       <!-- <div class="burger-menu">
         <span></span>
       </div>
-
       <nav class="menu-body">
         <ul class="menu-list">
           <li> <a href="" class="menu-link">Главная</a> </li>
@@ -72,101 +71,78 @@
             <p class="views">>1 Billion</p>
           </div>
 
+
         </div>
-
-        <form id="registration-form" class="form">
-          <div class="form-wrapper">
-            <div class="form-header">
-              <h2>Регистрация</h2>
-            </div>
-            <div class="form-group">
-              <label for="username">Имя пользователя:</label>
-              <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="password">Пароль:</label>
-              <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-              <label for="confirm-password">Подтвердите пароль:</label>
-              <input type="password" id="confirm-password" name="confirm-password" required>
-            </div>
+        <div class='forms'>
+          <div class="form-switcher">
+            <div class="register-switch active">Регистрация</div>
+            <div class="login-switch">Вход</div>
+          </div>
+          <form class="register-form active">
+            <input type="text" placeholder="Имя пользователя">
+            <input type="email" placeholder="Электронная почта">
+            <input type="password" placeholder="Пароль">
+            <input type="password" placeholder="Повторите пароль">
             <button type="submit">Зарегистрироваться</button>
-            <p class="form-message">Уже зарегистрированы? <a href="#" id="login-link">Войти</a></p>
-          </div>
-        </form>
-
-
-        <form id="login-form" class="form hidden">
-          <div class="form-wrapper">
-            <div class="form-header">
-              <h2>Авторизация</h2>
-            </div>
-            <div class="form-group">
-              <label for="username">Имя пользователя:</label>
-              <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-              <label for="password">Пароль:</label>
-              <input type="password" id="password" name="password" required>
-            </div>
+          </form>
+          <form class="login-form">
+            <input type="text" placeholder="Имя пользователя">
+            <input type="password" placeholder="Пароль">
             <button type="submit">Войти</button>
-            <p class="form-message">Нет аккаунта? <a href="#" id="register-link">Зарегистрироваться</a></p>
-          </div>
-      </div>
-      </form>
+          </form>
+        </div>
+        <script>
+          const registerSwitch = document.querySelector('.register-switch');
+          const loginSwitch = document.querySelector('.login-switch');
+          const registerForm = document.querySelector('.register-form');
+          const loginForm = document.querySelector('.login-form');
 
-      <script>
-        const registerForm = document.getElementById('registration-form');
-        const loginForm = document.getElementById('login-form');
-        const registerLink = document.getElementById('register-link');
-        const loginLink = document.getElementById('login-link');
+          registerSwitch.addEventListener('click', () => {
+            registerSwitch.classList.add('active');
+            loginSwitch.classList.remove('active');
+            registerForm.classList.add('active');
+            loginForm.classList.remove('active');
+          });
 
-        registerLink.addEventListener('click', () => {
-          registerForm.classList.remove('hidden');
-          loginForm.classList.add('hidden');
-        });
+          loginSwitch.addEventListener('click', () => {
+            loginSwitch.classList.add('active');
+            registerSwitch.classList.remove('active');
+            loginForm.classList.add('active');
+            registerForm.classList.remove('active');
+          });
 
-        loginLink.addEventListener('click', () => {
-          loginForm.classList.remove('hidden');
-          registerForm.classList.add('hidden');
-        });
-      </script>
+        </script>
 
-      <!-- <div class="button">
+        <!-- <div class="button">
           <button type="submit">Принять</button>
         </div> -->
+      </div>
     </div>
-  </div>
-  </main>
+    </main>
 
 
-  <footer>
+    <footer>
 
-    <div class="contacts">
-      <p>Для звонков по России: +7 (3412)-XXX-XX-XX</p>
-      <p>Для вопросов и обращений: example@mail.ru</p>
-    </div>
+      <div class="contacts">
+        <p>Для звонков по России: +7 (3412)-XXX-XX-XX</p>
+        <p>Для вопросов и обращений: example@mail.ru</p>
+      </div>
 
-    <div class="formal-links">
-      <a href="#">Политика обработки персональных данных</a>
-      <a href="#">Пользовательское соглашение</a>
-    </div>
+      <div class="formal-links">
+        <a href="#">Политика обработки персональных данных</a>
+        <a href="#">Пользовательское соглашение</a>
+      </div>
 
-    <div class="social">
-      <a href="https://vk.com/krevetych_it" class="social-link-vk"> <img
-          src="icons/VK_Compact_Logo_(2021-present).svg.png" alt="vk-logo" width="40px" height="40px"> </a>
-      <a href="https://www.instagram.com/lanarhoades/" class="social-link-inst"><img src="icons/174855.png"
-          alt="instagram-logo" width="40px" height="40px"></a>
-      <a href="#" class="social-link-ds"><img src="/icons/3670157.png" alt="discord-logo" width="40px"
-          height="40px"></a>
-    </div>
+      <div class="social">
+        <a href="https://vk.com/krevetych_it" class="social-link-vk"> <img
+            src="icons/VK_Compact_Logo_(2021-present).svg.png" alt="vk-logo" width="40px" height="40px"> </a>
+        <a href="https://www.instagram.com/lanarhoades/" class="social-link-inst"><img src="icons/174855.png"
+            alt="instagram-logo" width="40px" height="40px"></a>
+        <a href="#" class="social-link-ds"><img src="/icons/3670157.png" alt="discord-logo" width="40px"
+            height="40px"></a>
+      </div>
 
-  </footer>
+    </footer>
 
 
   </div>
