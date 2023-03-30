@@ -14,7 +14,7 @@
 <body>
   <div class="page">
 
-<!-- <section class="first-section"> -->
+    <!-- <section class="first-section"> -->
     <header>
       <div class="logo">
         <img src="/icons/city-improvement-low-resolution-logo-white-on-transparent-background.png" alt="Logo"
@@ -28,7 +28,7 @@
         </h1>
       </div>
 
-      <div class="burger-menu">
+      <!-- <div class="burger-menu">
         <span></span>
       </div>
 
@@ -39,18 +39,32 @@
           <li> <a href="" class="menu-link">Войти</a> </li>
           <li> <a href="" class="menu-link">Регистрация</a> </li>
         </ul>
-      </nav>
+      </nav> -->
+
+      <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+        <ul class="menu__box">
+          <li><a class="menu__item" href="#">Главная</a></li>
+          <li><a class="menu__item" href="#">Проекты</a></li>
+          <li><a class="menu__item" href="#">Команда</a></li>
+          <li><a class="menu__item" href="#">Блог</a></li>
+          <li><a class="menu__item" href="#">Контакты</a></li>
+        </ul>
+      </div>
 
     </header>
-  <!-- </section> -->
+    <!-- </section> -->
 
-    <main>
+    <div>
       <div class="flex-container">
-      <div class='last-solution'>
-        <br>
-        <div class="post"></div>
-        <h2>Последняя решенная проблема</h2>
-        <!-- <img src="/img/DALL·E 2023-03-26 16.43.57.png" alt="main_image" width=540 /> -->
+        <div class='last-solution'>
+          <br>
+          <div class="post"></div>
+          <h2>Последняя решенная проблема</h2>
+          <!-- <img src="/img/DALL·E 2023-03-26 16.43.57.png" alt="main_image" width=540 /> -->
           <img src="/img/DALL·E 2023-03-26 16.43.57.png" class="main-img" alt="post image" width=540>
           <div class="caption">
             <p class="date">March 29, 2023</p>
@@ -60,68 +74,104 @@
           </div>
 
         </div>
-      </div>
 
-      <div class="form-wrapper">
-        <div class="form-header">
-          <h2>Регистрация</h2>
+        <form id="registration-form" class="form">
+          <div class="form-wrapper">
+            <div class="form-header">
+              <h2>Регистрация</h2>
+            </div>
+            <div class="form-group">
+              <label for="username">Имя пользователя:</label>
+              <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Пароль:</label>
+              <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+              <label for="confirm-password">Подтвердите пароль:</label>
+              <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit">Зарегистрироваться</button>
+            <p class="form-message">Уже зарегистрированы? <a href="#" id="login-link">Войти</a></p>
+            </div>
+        </form>
+
+
+        <form id="login-form" class="form hidden">
+          <div class="form-wrapper">
+            <div class="form-header">
+          <h2>Авторизация</h2>
         </div>
-        <form class="form-body">
           <div class="form-group">
             <label for="username">Имя пользователя:</label>
             <input type="text" id="username" name="username" required>
           </div>
           <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
             <label for="password">Пароль:</label>
             <input type="password" id="password" name="password" required>
           </div>
-          <div class="form-group">
-            <label for="confirm-password">Подтвердите пароль:</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
-          </div>
-          <button type="submit">Зарегистрироваться</button>
-        </form>
-        <div class="form-footer">
-          <p>Уже зарегистрированы? <a href="#">Войти</a></p>
-        </div>
+          <button type="submit">Войти</button>
+          <p class="form-message">Нет аккаунта? <a href="#" id="register-link">Зарегистрироваться</a></p>
       </div>
+    </div>
+      </form>
+
+      <script>
+        const registerForm = document.getElementById('registration-form');
+        const loginForm = document.getElementById('login-form');
+        const registerLink = document.getElementById('register-link');
+        const loginLink = document.getElementById('login-link');
+
+        registerLink.addEventListener('click', () => {
+          registerForm.classList.remove('hidden');
+          loginForm.classList.add('hidden');
+        });
+
+        loginLink.addEventListener('click', () => {
+          loginForm.classList.remove('hidden');
+          registerForm.classList.add('hidden');
+        });
+      </script>
 
       <!-- <div class="button">
           <button type="submit">Принять</button>
         </div> -->
-      </div>
-    </main>
+    </div>
+  </div>
+  </main>
 
 
-    <footer>
+  <footer>
 
-      <div class="contacts">
-        <p>Для звонков по России: +7 (3412)-XXX-XX-XX</p>
-        <p>Для вопросов и обращений: example@mail.ru</p>
-      </div>
+    <div class="contacts">
+      <p>Для звонков по России: +7 (3412)-XXX-XX-XX</p>
+      <p>Для вопросов и обращений: example@mail.ru</p>
+    </div>
 
-      <div class="formal-links">
-        <a href="#">Политика обработки персональных данных</a>
-        <a href="#">Пользовательское соглашение</a>
-      </div>
+    <div class="formal-links">
+      <a href="#">Политика обработки персональных данных</a>
+      <a href="#">Пользовательское соглашение</a>
+    </div>
 
-      <div class="social">
-        <a href="https://vk.com/krevetych_it" class="social-link-vk"> <img
-            src="icons/VK_Compact_Logo_(2021-present).svg.png" alt="vk-logo" width="40px" height="40px"> </a>
-        <a href="https://www.instagram.com/lanarhoades/" class="social-link-inst"><img src="icons/174855.png"
-            alt="instagram-logo" width="40px" height="40px"></a>
-        <a href="#" class="social-link-ds"><img src="/icons/3670157.png" alt="discord-logo" width="40px"
-            height="40px"></a>
-      </div>
+    <div class="social">
+      <a href="https://vk.com/krevetych_it" class="social-link-vk"> <img
+          src="icons/VK_Compact_Logo_(2021-present).svg.png" alt="vk-logo" width="40px" height="40px"> </a>
+      <a href="https://www.instagram.com/lanarhoades/" class="social-link-inst"><img src="icons/174855.png"
+          alt="instagram-logo" width="40px" height="40px"></a>
+      <a href="#" class="social-link-ds"><img src="/icons/3670157.png" alt="discord-logo" width="40px"
+          height="40px"></a>
+    </div>
 
-    </footer>
+  </footer>
 
 
   </div>
   <script src="/scripts.js"></script>
 </body>
+
 </html>
