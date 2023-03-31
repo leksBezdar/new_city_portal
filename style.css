@@ -296,7 +296,7 @@ header {
 }
 
 .form-switcher div {
-  color: black;
+  color: white;
   font-size: 20px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -305,6 +305,7 @@ header {
 }
 
 .form-switcher div.active {
+  color: black;
   background-color: #f2f2f2;
   border-bottom: none;
 }
@@ -342,7 +343,7 @@ button {
   font-size: 20px;
   padding: 20px;
   border-radius: 5px;
-  background-color: #4caf50;
+  background-color: #DA7B93;
   color: white;
   cursor: pointer;
   border-radius: var(--border);
@@ -356,7 +357,7 @@ input[type="email"] {
 }
 
 button:hover {
-  background-color: #3e8e41;
+  background-color: #F171A1;
 }
 
 footer {
