@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Api(models.Model):
@@ -18,3 +19,10 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+class Menu(models.Model):
+    name = models.CharField('Название', max_length=100)
+    url = models.CharField('Ссылка', max_length=255, unique=True)
+
+    def __str__(self):
+        return str(self.name)
