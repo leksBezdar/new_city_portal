@@ -17,8 +17,9 @@
   <div class="page">
     <header>
       <div class="logo">
-        <a href="#" alt="???"><img src={% static 'icons/city-improvement-low-resolution-logo-white-on-transparent-background.png' %}
-            alt="Logo" /> </a>
+        <a href="#" alt="???"><img src={%
+            static 'icons/city-improvement-low-resolution-logo-white-on-transparent-background.png' %} alt="Logo" />
+        </a>
       </div>
 
       <div class="slogan">
@@ -42,7 +43,8 @@
         <div class='last-solution'>
           <div class="post"></div>
           <h2>Последняя решенная проблема</h2>
-          <img src="https://medical-treatment-japan.jp/ru/wp-content/uploads/sites/4/2018/05/fuji.png" class="main-img" alt="post image">
+          <img src="https://medical-treatment-japan.jp/ru/wp-content/uploads/sites/4/2018/05/fuji.png" class="main-img"
+            alt="post image">
           <div class="caption">
             <p class="date">March 29, 2023</p>
             <p class="section">Nature</p>
@@ -97,10 +99,53 @@
 
 
     <footer>
+      <div class="footer-title">
+        <h2>КОНТАКТЫ</h2>
+      </div>
+      <div class='footer-flex-container'>
+        <div class="footer-info">
+          <h3>АДРЕС</h3>
+          <p> Ул. Ленина, 68 </p>
+          <h3>ТЕЛЕФОН</h3>
+          <p> +7 (912) 016-46-84</p>
+          <h3>РЕЖИМ РАБОТЫ</h3>
+          <p> 24/7</p>
+          <h3>ДИРЕКТОР</h3>
+          <p> Дядя Тимур</p>
+          <h3>АРТ-ДИРЕКТОР</h3>
+          <p> DALL-E</p>
+        </div>
+
+        <div id='map' class="map">
+
+        </div>
+
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=73d9958d-9afc-447f-bf09-705b71611a5b"></script>
+        <script>
+          ymaps.ready(function () {
+            var map = new ymaps.Map("map", {
+              center: [56.8447198993388,53.225480397758425],
+              zoom: 19
+            });
+            var placemark = new ymaps.Placemark([56.8447198993388,53.225480397758425], {
+              hintContent: "Здание ИПЭК"
+            }, {
+              preset: "islands#redDotIcon"
+            });     
+            map.geoObjects.add(placemark);
+          });
+          </script>
+
+      </div>
+      <div class="lower-footer">
+        <p>Copyright © 2023. Все права не защищены.</p>
+        <p>Разработано в ИПЭК</p>
+      </div>
     </footer>
 
 
   </div>
+
   <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 
