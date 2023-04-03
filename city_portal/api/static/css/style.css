@@ -204,11 +204,31 @@ header {
   margin: 50px;
 }
 
-.status {
+.status-n {
   padding: 15px;
   font-size: 20px;
   position: absolute;
   color: green;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+}
+
+.status-z {
+  padding: 15px;
+  font-size: 20px;
+  position: absolute;
+  color: gray;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+}
+
+.status-o {
+  padding: 15px;
+  font-size: 20px;
+  position: absolute;
+  color: red;
   bottom: 0;
   right: 0;
   margin: 0;
