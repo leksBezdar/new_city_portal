@@ -1,11 +1,13 @@
+{% block content %}
 <img
-  src="{{api_items.photo.url}}"
+  src="{{post_items.photo.url}}"
   class="main-img"
   alt="post image"
 />
 <div class="caption">
-  <p class="date">{{ api_items.time_update}}(Мск)</p>
-  <p class="section">{{api_items.cat}}</p>
-  <p class="description">{{api_items.description}}</p>
-  <p class="views">>1 Billion</p>
+  <p class="date">Время: {{post_items.time_update}}(Мск)</p>
+  <p class="section">Категория: {{post_items.cat}}</p>
+  <p class="problem">{{post_items.problem}}</p>
+  <p class="status">{{post_items.status}}</p>
 </div>
+{% endblock content %}

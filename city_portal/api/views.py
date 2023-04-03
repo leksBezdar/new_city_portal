@@ -20,20 +20,20 @@ class WomenAPIListPagination(PageNumberPagination):
 
 
 class ApiAPIList(generics.ListCreateAPIView):
-    queryset = Api.objects.all()
+    queryset = Post.objects.all()
     serializer_class = ApiSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
     pagination_class = WomenAPIListPagination
 
 
 class ApiAPIUpdate(generics.RetrieveUpdateAPIView):
-    queryset = Api.objects.all()
+    queryset = Post.objects.all()
     serializer_class = ApiSerializer
     permission_classes = (IsAuthenticated, )
 
 
 class ApiAPIDestroy(generics.RetrieveDestroyAPIView):
-    queryset = Api.objects.all()
+    queryset = Post.objects.all()
     serializer_class = ApiSerializer
     permission_classes = (IsAdminOrReadOnly, )
 

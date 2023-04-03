@@ -9,9 +9,10 @@
 }
 
 html {
-  background: url(http://mobimg.b-cdn.net/v3/fetch/fb/fb00b49e258937c7c4970fdfcae9a674.jpeg) no-repeat;
+  /* background: url(http://mobimg.b-cdn.net/v3/fetch/fb/fb00b49e258937c7c4970fdfcae9a674.jpeg) no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
+  background-color: #505050;
   overflow-x: hidden;
 }
 
@@ -24,7 +25,7 @@ html {
 header {
   position: sticky;
   top: 1.2rem;
-  margin: 0 var(--indent) 0.5rem var(--indent);
+  margin: 0 var(--indent) 3rem var(--indent);
   border-radius: var(--border);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
   backdrop-filter: var(--bgcolor);
@@ -63,7 +64,7 @@ header {
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: black;
+  background-color: white;
 }
 
 .menu__btn>span::before {
@@ -88,7 +89,7 @@ header {
   padding: 80px 0;
   list-style: none;
   text-align: center;
-  background-color: white;
+  background-color: #616264;
   box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
   border-radius: var(--border);
 }
@@ -96,7 +97,7 @@ header {
 .menu__item {
   display: block;
   padding: 12px 24px;
-  color: black;
+  color: white;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   font-weight: 700;
@@ -105,7 +106,7 @@ header {
 
 .menu__item:hover {
   color: white;
-  background-color: #F171A1;
+  background-color:#6B6C70;
 }
 
 #menu__toggle:checked~.menu__btn>span {
@@ -176,9 +177,6 @@ header {
   border-radius: 0 0 var(--border) var(--border);
 }
 
-.caption p {
-  color: black;
-}
 
 .section {
   padding: 15px;
@@ -200,16 +198,17 @@ header {
   padding: 10px;
 }
 
-.description {
+.problem {
   font-size: 20px;
   color: black;
   margin: 50px;
 }
 
-.views {
+.status {
   padding: 15px;
-  font-size: 14px;
+  font-size: 20px;
   position: absolute;
+  color: green;
   bottom: 0;
   right: 0;
   margin: 0;
@@ -292,7 +291,7 @@ button {
   font-size: 20px;
   padding: 20px;
   border-radius: 5px;
-  background-color: #DA7B93;
+  background-color: #616264;
   color: white;
   cursor: pointer;
   border-radius: var(--border);
@@ -306,7 +305,7 @@ input[type="email"] {
 }
 
 button:hover {
-  background-color: #F171A1;
+  background-color: #6B6C70;
 }
 
 /* footer {
@@ -345,16 +344,19 @@ button:hover {
 
 
 footer {
-  margin: 100px 0.5rem 0 var(--indent); 
+  margin: 5rem var(--indent) 0.5rem var(--indent);
+  border-radius: var(--border);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
+  backdrop-filter: var(--bgcolor);
 }
 
 .footer-title h2 {
   text-align: center;
-  margin-bottom: 70px;
+  margin: 1.2rem 0 2rem 0;
 }
 
 .footer-flex-container{
-  margin-right: 45px;
+  margin: 0 var(--indent) 5rem var(--indent);
   display: flex;
   justify-content: space-between;
 }
@@ -391,8 +393,7 @@ footer {
   display: flex;
   justify-content: space-between;
   opacity: 30%;
-  margin-top: 20px;
-  margin-right: 45px;
+  margin: 0 var(--indent) 1.2rem var(--indent);
 }
 
 .lower-footer p{

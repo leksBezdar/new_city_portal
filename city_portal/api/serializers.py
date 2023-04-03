@@ -5,5 +5,5 @@ from .models import *
 
 class ApiSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Api
+        model = Post
         fields = '__all__'

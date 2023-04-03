@@ -13,7 +13,7 @@ def show_top_menu(context):
 
 @register.inclusion_tag('api/post.html', takes_context=True)
 def show_post(context):
-    api_items = Api.objects.latest('time_update')
+    post_items = Post.objects.latest('time_update')
     return {
-        "api_items": api_items,
+        "post_items": post_items,
     }
