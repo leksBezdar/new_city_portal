@@ -177,8 +177,18 @@ header {
   border-radius: 0 0 var(--border) var(--border);
 }
 
+.upper-description{
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  padding: 15px;
+}
 
-.section {
+.section, .date{
+  color: black;
+}
+
+/* .section {
   padding: 15px;
   font-size: 16px;
   font-weight: bold;
@@ -196,42 +206,53 @@ header {
   font-size: 14px;
   color: black;
   padding: 10px;
+} */
+
+.title{
+  color: black;
+  text-align: center;
+  font-size: 40px;
+  padding: 15px;
 }
 
 .problem {
   font-size: 20px;
   color: black;
-  margin: 50px;
+  margin: 15px 15px 40px 15px;
+  /* text-indent: 30px; */
 }
 
 .status-n {
   padding: 15px;
+  text-align: right;
   font-size: 20px;
-  position: absolute;
+  /* position: absolute; */
   color: green;
-  bottom: 0;
+  /* bottom: 0;
   right: 0;
-  margin: 0;
+  margin: 0; */
 }
 
 .status-z {
   padding: 15px;
+  text-align: right;
   font-size: 20px;
-  position: absolute;
-  color: gray;
-  bottom: 0;
+  /* position: absolute; */
+  color: green;
+  /* bottom: 0;
   right: 0;
-  margin: 0;
+  margin: 0; */
 }
 
 .status-o {
   padding: 15px;
+  text-align: right;
   font-size: 20px;
-  position: absolute;
-  color: red;
-  bottom: 0;
+  /* position: absolute; */
+  color: green;
+  /* bottom: 0;
   right: 0;
-  margin: 0;
+  margin: 0; */
 }
 
 .forms {
@@ -286,6 +307,13 @@ header {
   margin-top: 20px;
 }
 
+.application-form {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .register-form.active,
 .login-form.active {
   display: flex;
@@ -296,7 +324,8 @@ header {
 
 input[type="text"],
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+textarea{
   color: black;
   font-size: 20px;
   margin-top: 10px;
@@ -305,13 +334,22 @@ input[type="email"] {
   outline: none;
 }
 
+.radio{
+  display: flex;
+  justify-content: space-between;
+  /* flex */
+  color: black;
+  font-size: 20px;
+}
+
 button {
   margin-top: 25px;
   color: black;
   font-size: 20px;
   padding: 20px;
   border-radius: 5px;
-  background-color: #616264;
+  /* background-color: #616264; */
+  background-color: green;
   color: white;
   cursor: pointer;
   border-radius: var(--border);
@@ -324,9 +362,13 @@ input[type="email"] {
   width: 250px;
 }
 
-button:hover {
-  background-color: #6B6C70;
+.radio {
+
 }
+
+/* button:hover {
+  background-color: #6B6C70;
+} */
 
 /* footer {
   display: grid;
