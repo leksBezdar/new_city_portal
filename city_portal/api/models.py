@@ -1,5 +1,5 @@
 from django.db import models
-from django.urls import reverse
+from django.contrib.auth.models import AbstractUser
 
 
 class Post(models.Model):
@@ -26,3 +26,6 @@ class Menu(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+class CustomUser(AbstractUser):
+    pass
