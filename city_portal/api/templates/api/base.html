@@ -63,6 +63,21 @@
             <input type="password" placeholder="Пароль">
             <button type="submit">Войти</button>
           </form>
+          <form class="application-form">
+            <input type="email" placeholder="Email для обратной связи*">  <!--* - необязательное поле-->
+            <textarea placeholder="Кратко опишите проблему" ></textarea>
+            <label>Выберите категорию своей проблемы</label>
+            <div class="radio">
+              <input type="radio" id="Nature" name="category" value="Nature">
+              <label for="nature">Nature</label>
+            </div>
+            <div class="radio">
+              <input type="radio" id="etc..." name="category" value="etc...">
+              <label for="etc">etc...</label>
+            </div>
+            <button type="submit">Отправить</button>
+
+          </form>
         </div>
         <script>
           const registerSwitch = document.querySelector('.register-switch');

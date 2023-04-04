@@ -1,27 +1,31 @@
 {% block content %}
 {% if post_items.status == "Закрыта" %}
-<img
-  src="https://th.bing.com/th/id/OIP.hzK9swtLte-w_ldMEqLPIgHaE8?pid=ImgDet&rs=1"
-  class="main-img"
-  alt="post image"
-/>
+<img src="https://th.bing.com/th/id/OIP.hzK9swtLte-w_ldMEqLPIgHaE8?pid=ImgDet&rs=1" class="main-img" alt="post image" />
 {% else %}
-<img
-  src="{{post_items.photo.url}}"
-  class="main-img"
-  alt="post image"
-/>
+<img src="{{post_items.photo.url}}" class="main-img" alt="post image" />
 {% endif %}
 <div class="caption">
-  <p class="date">Время: {{post_items.time_update}}(Мск)</p>
-  <p class="section">Категория: {{post_items.cat}}</p>
-  <p class="problem">{{post_items.problem}}</p>
-{% if post_items.status == "Закрыта" %}
+
+  <div class="upper-description">
+    <p class="date">Время: {{post_items.time_update}}(Мск)</p>
+    <p class="section">Категория: {{post_items.cat}}</p>
+  </div>
+
+  <p class="title">
+    <!-- {{post_item.title}} -->
+    Title title
+  </p>
+  
+  <p class="problem">
+    <!-- {{post_items.problem}} -->
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero id rem ab dignissimos doloremque non magnam placeat illum culpa eum sunt repellendus iusto expedita inventore totam blanditiis assumenda, veritatis, iure illo. Quaerat itaque repudiandae, voluptate illum ipsam tenetur nostrum quo reiciendis facilis suscipit quod ullam consequatur ex aperiam aliquid nam? Soluta, ex animi impedit quidem illum cumque sunt, totam odio voluptate ducimus expedita neque, voluptatum architecto! Earum fuga recusandae fugit molestiae dignissimos tempore in harum nisi error quia, laboriosam expedita commodi. Voluptatem laudantium inventore accusamus blanditiis necessitatibus? Tempore deserunt pariatur aliquam et? Delectus at cumque cum amet, molestiae, similique ab laborum animi nemo minima consectetur libero id vitae reiciendis corporis eum autem porro molestias maiores! Asperiores qui officia et inventore iure libero debitis omnis? Quaerat harum quibusdam quis sed architecto officiis quidem minus totam molestias molestiae optio commodi, ut ipsam nostrum iusto corrupti consequatur neque facere ducimus quas ratione suscipit, ab dolor? Repellat, quae eligendi? Voluptate itaque odit magnam doloremque amet eius error distinctio delectus ipsum natus, temporibus nobis tempore suscipit harum repellat. Nisi molestiae maiores molestias corrupti. Doloribus, adipisci, tempore magni, similique eum ad tempora enim ab consectetur exercitationem incidunt dolore provident iusto. Consequatur officia sed accusamus consequuntur provident.
+  </p>
+  {% if post_items.status == "Закрыта" %}
   <p class="status-z">{{post_items.status}}</p>
-{% elif post_items.status == "Отклонена" %}
+  {% elif post_items.status == "Отклонена" %}
   <p class="status-o">{{post_items.status}}</p>
-{% elif post_items.status == "Новая" %}
+  {% elif post_items.status == "Новая" %}
   <p class="status-n">{{post_items.status}}</p>
-{% endif %}
+  {% endif %}
 </div>
 {% endblock content %}
