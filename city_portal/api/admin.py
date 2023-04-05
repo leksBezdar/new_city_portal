@@ -14,4 +14,3 @@ from .models import *
 # admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Post)
 admin.site.register(Category)
-admin.site.register(Menu)

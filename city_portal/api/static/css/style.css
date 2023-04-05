@@ -250,17 +250,6 @@ header {
   margin: 0; */
 }
 
-.status-o {
-  padding: 15px;
-  text-align: right;
-  font-size: 20px;
-  /* position: absolute; */
-  color: red;
-  /* bottom: 0;
-  right: 0;
-  margin: 0; */
-}
-
 .forms {
   display: flex;
   flex-direction: column;
@@ -351,7 +340,7 @@ textarea{
   color: black;
   font-size: 20px;
   width: 100px;
-  
+
 }
 
 .radio-buttons{

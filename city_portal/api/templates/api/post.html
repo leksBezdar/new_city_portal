@@ -13,17 +13,9 @@
     <!-- {{post_item.title}} -->
     Title title
   </p>
-  {% autoescape on %}
   <p class="problem">
     {{post_items.content}}
   </p>
-{% endautoescape %}
-  {% if post_items.status == "Решена" %}
-  <p class="status-z">{{post_items.status}}</p>
-  {% elif post_items.status == "Отклонена" %}
-  <p class="status-o">{{post_items.status}}</p>
-  {% elif post_items.status == "Новая" %}
-  <p class="status-n">{{post_items.status}}</p>
-  {% endif %}
+  <p class="status-z">Решена</p>
 </div>
 {% endblock content %}

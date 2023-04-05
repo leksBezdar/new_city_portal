@@ -10,7 +10,6 @@ class Post(models.Model):
     time_create = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
     time_update = models.DateTimeField(auto_now=True, verbose_name="Время изменения")
     cat = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name="Категории", blank=True)
-    status = models.CharField(max_length=20, default="Новая", verbose_name="Статус заявки")
 
     def __str__(self):
         return self.problem
@@ -21,13 +20,6 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-
-class Menu(models.Model):
-    name = models.CharField('Название', max_length=100, blank=True)
-    url = models.CharField('Ссылка', max_length=255, unique=True, blank=True)
-
-    def __str__(self):
-        return str(self.name)
 
 # class CustomUser(AbstractUser):
 #     pass
