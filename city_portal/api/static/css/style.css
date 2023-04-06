@@ -167,6 +167,35 @@ header {
   margin-top: 15px;
 }
 
+/* .main-imgs {
+  position: relative;
+  margin-bottom: 19px;
+}
+
+.main-img {
+  position: relative;
+  margin-bottom: 19px;
+}
+.main-resolved-problem__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 876px;
+  border-radius: var(--border) var(--border) 0 0;
+  margin-top: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.main-resolved-problem__image_before {
+    opacity: 0
+  }
+.main-resolved-problem__image_before:hover {
+      opacity: 1;
+    } */
+
 .post {
   margin-bottom: 20px;
   position: relative;

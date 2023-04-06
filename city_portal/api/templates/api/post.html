@@ -1,21 +1,20 @@
-{% block content %} {% if post_items.status == "Решена" %}
+
 <img src="{{post_items.img_after.url}}" class="main-img" alt="post image" />
-{% else %}
-<img src="{{post_items.img_before.url}}" class="main-img" alt="post image" />
-{% endif %}
 <div class="caption">
   <div class="upper-description">
     <p class="date">Время: {{post_items.time_update}}(Мск)</p>
     <p class="section">Категория: {{post_items.cat}}</p>
   </div>
-
   <p class="title">
-    <!-- {{post_item.title}} -->
-    Title title
+    {{post_items.title}}
   </p>
   <p class="problem">
     {{post_items.content}}
   </p>
   <p class="status-z">Решена</p>
 </div>
-{% endblock content %}
+
+{% comment %} <div class="main-imgs">
+  <div class="main-img main-img-after" style="background-image: url({{post_items.img_after.url}})"></div>
+  <div class="main-img main-img-before" style="background-image: url({{post_items.img_before.url}})"></div>
+  </div> {% endcomment %}
