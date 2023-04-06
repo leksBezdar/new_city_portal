@@ -361,6 +361,11 @@ textarea{
   border: none;
 }
 
+.error {
+  margin-top: 20px;
+  color: red;
+}
+
 textarea{
   resize: none;
 }
