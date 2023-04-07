@@ -28,3 +28,7 @@ class CreationForm(UserCreationForm):
                 'placeholder': 'Электронная почта'
             }),
         }
+
+class LoginForm(AuthenticationForm):
+    username = CharField(max_length=20, widget=TextInput(attrs={'placeholder': 'Логин'}))
+    password = CharField(max_length=16, widget=PasswordInput(attrs={'placeholder': 'Пароль'}))

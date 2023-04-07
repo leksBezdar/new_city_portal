@@ -25,8 +25,7 @@ from api.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/drf-auth/', include('rest_framework.urls')),
-    path('home/', include('api.urls')),
+    path('', include('api.urls')),
     # path('api/v1/auth/', include('djoser.urls')),
     # re_path(r'^auth/', include('djoser.urls.authtoken')),
     # path('api/v1/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),

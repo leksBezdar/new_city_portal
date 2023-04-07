@@ -300,14 +300,12 @@ header {
 
 .form-switcher .register-switch {
   transition: 0.5s;
-  border-radius: var(--border) 0 0 var(--border);
-  cursor: pointer;
+  border-radius: var(--border);
 }
 
 .form-switcher .login-switch {
   transition: 0.5s;
-  border-radius: 0 var(--border) var(--border) 0;
-  cursor: pointer;
+  border-radius: var(--border);
 }
 
 .form-switcher .application-switch {
@@ -318,16 +316,8 @@ header {
 
 .form-switcher div {
   color: white;
-  font-size: 20px;
-  padding: 10px 30px;
-  border: 1px solid #ccc;
-  border-radius: var(--border);
-}
-
-.form-switcher div.active {
-  color: black;
-  background-color: #f2f2f2;
-  border-bottom: none;
+  font-size: 40px;
+  font-weight: 700;
 }
 
 .register-form,
@@ -348,7 +338,7 @@ header {
 }
 
 .register-form.active,
-.login-form.active, .application-form.active {
+.login-form.active {
   display: flex;
   flex-direction: column;
   justify-content: center;

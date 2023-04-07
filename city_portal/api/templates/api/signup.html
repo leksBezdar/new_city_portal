@@ -4,68 +4,29 @@
 <form method="post">
   {% csrf_token %}
   <div class="forms">
-    {% if request.user.is_authenticated %}
-
+    {% if request.user.last_login == None %}
     <div class="form-switcher">
-      <div class="application-switch active">Заявка</div>
+      <div class="register-switch">Регистрация</div>
     </div>
-    <form class="application-form">
-      <input type="email" placeholder="Email для обратной связи" />
-      <textarea placeholder="Кратко опишите проблему" required></textarea>
-      <h3>Выберите категорию своей проблемы</h3>
-      <div class="radio-buttons">
-        <div class="radio">
-          <input type="radio" id="Nature" name="category" value="Nature" />
-          <label for="nature">Nature</label>
-        </div>
-        <div class="radio">
-          <input type="radio" id="etc..." name="category" value="etc..." />
-          <label for="etc">etc...</label>
-        </div>
-        <div class="radio">
-          <input type="radio" id="smth1" name="category" value="smth1" />
-          <label for="smth1">smth1</label>
-        </div>
-        <div class="radio">
-          <input type="radio" id="smth2" name="category" value="smth2" />
-          <label for="smth2">smth2</label>
-        </div>
-        <div class="radio">
-          <input type="radio" id="smth3" name="category" value="smth3" />
-          <label for="smth3">smth3</label>
-        </div>
-        <div class="radio">
-          <input type="radio" id="smth4" name="category" value="smth4" />
-          <label for="smth4">smth4</label>
-        </div>
-      </div>
-      <div class="photo-application">
-        <h3>Вставьте фото проблемы</h3>
-        <input type="file" name="photo" id="photo" />
-      </div>
-      <button type="submit">Отправить</button>
-    </form>
-    {% else %}
-    <div class="form-switcher">
-      <div class="register-switch active">Регистрация</div>
-      <div class="login-switch">Вход</div>
-    </div>
-    <form class="register-form active">
-      {{ form.first_name }}
-      {{ form.last_name }}
-      {{ form.username }}
-      {{ form.email }}
-      {{ form.password1 }}
-      {{ form.password2 }}
-      <span class="error">{{ error }}</span>
+    <form class="register-form">
+      {% for f in form %}
+      {{ f }}
+      <span class="error">{{ f.errors }}</span>
+      {% endfor %}
       <button type="submit">Зарегистрироваться</button>
     </form>
+    {% elif request.user.is_authenticated  %}
+    <p>Text</p>
+    {% else %}
+    <div class="form-switcher">
+      <div class="login-switch">Вход</div>
+    </div>
     <form class="login-form">
-      <input type="text" placeholder="Имя пользователя" />
-      <input type="password" placeholder="Пароль" />
+      {{log_form.username}}
+      {{log_form.password}}
+      <span class="error">{{ log_form.errors }}</span>
       <button type="submit">Войти</button>
     </form>
-
     {% endif %}
 
   </div>
