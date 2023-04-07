@@ -4,28 +4,11 @@
 <form method="post">
   {% csrf_token %}
   <div class="forms">
+    {% if request.user.is_authenticated %}
+
     <div class="form-switcher">
-      <div class="register-switch active">Регистрация</div>
-      <div class="login-switch">Вход</div>
+      <div class="application-switch active">Заявка</div>
     </div>
-    {% if not request.user.is_authenticated %}
-    <form class="register-form active">
-      {{ form.first_name }}
-      {{ form.last_name }}
-      {{ form.username }}
-      {{ form.email }}
-      {{ form.password1 }}
-      {{ form.password2 }}
-      <span class="error">{{ error }}</span>
-      <button type="submit">Зарегистрироваться</button>
-    </form>
-    {% else %}
-    <form class="login-form">
-      <input type="text" placeholder="Имя пользователя" />
-      <input type="password" placeholder="Пароль" />
-      <button type="submit">Войти</button>
-    </form>
-    {% endif %}
     <form class="application-form">
       <input type="email" placeholder="Email для обратной связи" />
       <textarea placeholder="Кратко опишите проблему" required></textarea>
@@ -62,6 +45,29 @@
       </div>
       <button type="submit">Отправить</button>
     </form>
+    {% else %}
+    <div class="form-switcher">
+      <div class="register-switch active">Регистрация</div>
+      <div class="login-switch">Вход</div>
+    </div>
+    <form class="register-form active">
+      {{ form.first_name }}
+      {{ form.last_name }}
+      {{ form.username }}
+      {{ form.email }}
+      {{ form.password1 }}
+      {{ form.password2 }}
+      <span class="error">{{ error }}</span>
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+    <form class="login-form">
+      <input type="text" placeholder="Имя пользователя" />
+      <input type="password" placeholder="Пароль" />
+      <button type="submit">Войти</button>
+    </form>
+
+    {% endif %}
+
   </div>
 </form>
 {% endblock content %}}

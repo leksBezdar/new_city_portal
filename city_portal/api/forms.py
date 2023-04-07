@@ -7,33 +7,12 @@ User = get_user_model()
 
 
 class CreationForm(UserCreationForm):
-    password1 = CharField(max_length=16, widget=PasswordInput(attrs={'placeholder': 'Пароль'}),)
+    patronymic = CharField(max_length=20, widget=TextInput(attrs={'placeholder': 'Отчество'}))
+    password1 = CharField(max_length=16, widget=PasswordInput(attrs={'placeholder': 'Пароль'}))
     password2 = CharField(max_length=16, widget=PasswordInput(attrs={'placeholder': 'Повторите пароль'}))
     class Meta(UserCreationForm.Meta):
         model = User
-        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
-
-        widgets = {
-            'first_name': TextInput(attrs={
-                'placeholder': 'Имя'
-            }),
-            'last_name': TextInput(attrs={
-                'placeholder': 'Фамилия'
-            }),
-            'username': TextInput(attrs={
-                'placeholder': 'Логин'
-            }),
-            'email': EmailInput(attrs={
-                'placeholder': 'Электронная почта'
-            }),
-        }
-
-class CreationForm(UserCreationForm):
-    password1 = CharField(max_length=16, widget=PasswordInput(attrs={'placeholder': 'Пароль'}),)
-    password2 = CharField(max_length=16, widget=PasswordInput(attrs={'placeholder': 'Повторите пароль'}))
-    class Meta(UserCreationForm.Meta):
-        model = User
-        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
+        fields = ('first_name', 'last_name', 'patronymic', 'username', 'email', 'password1', 'password2')
 
         widgets = {
             'first_name': TextInput(attrs={
