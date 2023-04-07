@@ -50,30 +50,10 @@
                     <h2>Последняя решенная проблема</h2>
                     {% show_post %}
                 </div>
-
-
-                <div class='forms'>
-                    <div class="form-switcher">
-                      <div class="register-switch active">Регистрация</div>
-                      <div class="login-switch">Вход</div>
+                    <div class='forms'>
+                        {% block content %}
+                        {% endblock %}
                     </div>
-                    <form class="register-form active">
-                      <input type="text" placeholder="Имя пользователя">
-                      <input type="email" placeholder="Электронная почта">
-                      <input type="password" placeholder="Пароль">
-                      <input type="password" placeholder="Повторите пароль">
-                      <div class="privacy-policy">
-                      <input type="checkbox" name="privacy-policy" id="privacy-policy">
-                      <label for="privacy-policy">Я прочитал и согласен с <a href="">обработкой персональных данных</a></label> 
-                      </div>
-                      <button type="submit">Зарегистрироваться</button>
-                    </form>
-                    <form class="login-form">
-                      <input type="text" placeholder="Имя пользователя">
-                      <input type="password" placeholder="Пароль">
-                      <button type="submit">Войти</button>
-                    </form>
-                  </div>
                 <script>
                     const registerSwitch = document.querySelector('.register-switch');
                     const loginSwitch = document.querySelector('.login-switch');

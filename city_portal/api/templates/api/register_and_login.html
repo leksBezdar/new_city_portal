@@ -1,0 +1,29 @@
+{% extends 'api/base.html' %}
+
+{% block content %}
+<div class="form-switcher">
+    <div class="register-switch active">Регистрация</div>
+    <div class="login-switch">Вход</div>
+</div>
+<form class="register-form active" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="Имя" name="first_name">
+    <input type="text" placeholder="Фамилия" name="last_name">
+    <input type="text" placeholder="Отчество" name="patronymic">
+    <input type="text" placeholder="Логин" name="username">
+    <input type="email" placeholder="Электронная почта" name="email">
+    <input type="password" placeholder="Пароль" name="password1">
+    <input type="password" placeholder="Повторите пароль" name="password2">
+    <div class="privacy-policy">
+        <input type="checkbox" name="privacy-policy" id="privacy-policy">
+        <label for="privacy-policy">Я прочитал и согласен на <a href="">обработкой персональных данных</a></label>
+    </div>
+    <button type="submit">Зарегистрироваться</button>
+</form>
+<form class="login-form" method='post'">
+    {% csrf_token %}
+    <input type="text" placeholder="Имя пользователя" name="username">
+    <input type="password" placeholder="Пароль" name="password">
+    <button type="submit">Войти</button>
+</form>
+{% endblock %}

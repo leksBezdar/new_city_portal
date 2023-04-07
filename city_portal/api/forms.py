@@ -1,34 +1,33 @@
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import get_user_model
-from django.forms import TextInput, EmailInput, PasswordInput, CharField
+from django import forms
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.models import User
 
 
-User = get_user_model()
+class RegisterUserForm(UserCreationForm):
+    patronymic = forms.CharField(max_length=20, widget=forms.TextInput(attrs={'placeholder': 'Отчество'}))
+    password1 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Пароль'}))
+    password2 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Повторите пароль'}))
 
-
-class CreationForm(UserCreationForm):
-    patronymic = CharField(max_length=20, widget=TextInput(attrs={'placeholder': 'Отчество'}))
-    password1 = CharField(max_length=16, widget=PasswordInput(attrs={'placeholder': 'Пароль'}))
-    password2 = CharField(max_length=16, widget=PasswordInput(attrs={'placeholder': 'Повторите пароль'}))
-    class Meta(UserCreationForm.Meta):
+    class Meta:
         model = User
         fields = ('first_name', 'last_name', 'patronymic', 'username', 'email', 'password1', 'password2')
 
         widgets = {
-            'first_name': TextInput(attrs={
+            'first_name': forms.TextInput(attrs={
                 'placeholder': 'Имя'
             }),
-            'last_name': TextInput(attrs={
+            'last_name': forms.TextInput(attrs={
                 'placeholder': 'Фамилия'
             }),
-            'username': TextInput(attrs={
+            'username': forms.TextInput(attrs={
                 'placeholder': 'Логин'
             }),
-            'email': EmailInput(attrs={
+            'email': forms.EmailInput(attrs={
                 'placeholder': 'Электронная почта'
             }),
         }
 
-class LoginForm(AuthenticationForm):
-    username = CharField(max_length=20, widget=TextInput(attrs={'placeholder': 'Логин'}))
-    password = CharField(max_length=16, widget=PasswordInput(attrs={'placeholder': 'Пароль'}))
+
+class LoginUserForm(AuthenticationForm):
+    username = forms.CharField(max_length=20, widget=forms.TextInput(attrs={'placeholder': 'Логин'}))
+    password = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Пароль'}))
