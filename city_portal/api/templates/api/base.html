@@ -62,27 +62,16 @@
                       <input type="email" placeholder="Электронная почта">
                       <input type="password" placeholder="Пароль">
                       <input type="password" placeholder="Повторите пароль">
+                      <div class="privacy-policy">
+                      <input type="checkbox" name="privacy-policy" id="privacy-policy">
+                      <label for="privacy-policy">Я прочитал и согласен с <a href="">обработкой персональных данных</a></label> 
+                      </div>
                       <button type="submit">Зарегистрироваться</button>
                     </form>
                     <form class="login-form">
                       <input type="text" placeholder="Имя пользователя">
                       <input type="password" placeholder="Пароль">
                       <button type="submit">Войти</button>
-                    </form>
-                    <form class="application-form">
-                      <input type="email" placeholder="Email для обратной связи*">  <!--* - необязательное поле-->
-                      <textarea placeholder="Кратко опишите проблему" ></textarea>
-                      <label>Выберите категорию своей проблемы</label>
-                      <div class="radio">
-                        <input type="radio" id="Nature" name="category" value="Nature">
-                        <label for="nature">Nature</label>
-                      </div>
-                      <div class="radio">
-                        <input type="radio" id="etc..." name="category" value="etc...">
-                        <label for="etc">etc...</label>
-                      </div>
-                      <button type="submit">Отправить</button>
-          
                     </form>
                   </div>
                 <script>
@@ -107,6 +96,7 @@
 
 
                 </script>
+
             </div>
         </div>
         </main>
@@ -149,7 +139,6 @@
                         });
                         map.geoObjects.add(placemark);
                     });
-
                 </script>
 
             </div>

@@ -349,7 +349,8 @@ header {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-textarea{
+textarea
+{
   color: black;
   font-size: 20px;
   margin-top: 10px;
@@ -358,6 +359,23 @@ textarea{
   outline: none;
   border: none;
 }
+
+.privacy-policy{
+  display: flex;
+  margin-top: 10px;
+  padding: 20px 30px;
+  max-width: 304px;
+}
+
+.privacy-policy input{
+  margin-right: 10px;
+}
+
+/* #privacy-policy{
+  transform:scale(1.5);
+  opacity:0.9;
+  cursor:pointer;
+  } */
 
 textarea{
   resize: none;
@@ -477,6 +495,15 @@ footer {
 #map > ymaps {
   border-radius: var(--border);
   overflow: hidden;
+}
+
+.ymaps-2-1-79-map ymaps,
+.ymaps-2-1-79-float-button-text,
+.ymaps-2-1-79-gototaxi__text,
+.ymaps-2-1-79-gotoymaps__text,
+.ymaps-2-1-79-listbox__button-text 
+ {
+  color: black !important;
 }
 
 .lower-footer{
