@@ -171,7 +171,6 @@ header {
   position: relative;
   margin-bottom: 19px;
 }
-
 .main-img {
   position: relative;
   margin-bottom: 19px;
@@ -231,7 +230,6 @@ header {
   right: 0;
   margin: 0;
 }
-
 .date {
   position: absolute;
   top: 5;
@@ -300,24 +298,27 @@ header {
 
 .form-switcher .register-switch {
   transition: 0.5s;
-  border-radius: var(--border);
+  border-radius: var(--border) 0 0 var(--border);
 }
 
 .form-switcher .login-switch {
   transition: 0.5s;
-  border-radius: var(--border);
-}
-
-.form-switcher .application-switch {
-  transition: .5s;
-  border-radius: var(--border);
-  cursor: default;
+  border-radius: 0 var(--border) var(--border) 0;
 }
 
 .form-switcher div {
   color: white;
-  font-size: 40px;
-  font-weight: 700;
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: var(--border);
+  cursor: pointer;
+}
+
+.form-switcher div.active {
+  color: black;
+  background-color: #f2f2f2;
+  border-bottom: none;
 }
 
 .register-form,
@@ -356,11 +357,6 @@ textarea{
   border-radius: var(--border);
   outline: none;
   border: none;
-}
-
-.error {
-  margin-top: 20px;
-  color: red;
 }
 
 textarea{
@@ -417,23 +413,19 @@ button:hover {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
   backdrop-filter: var(--bgcolor);
 }
-
 .contacts {
   font-size: 23px;
   margin-bottom: 20px;
 }
-
 .formal-links a {
   text-decoration: none;
   display: block;
   font-size: 23px;
 }
-
 .social {
   margin-bottom: 10px;
   margin-left: -10px;
 }
-
 .social-link-vk,
 .social-link-inst,
 .social-link-ds {
