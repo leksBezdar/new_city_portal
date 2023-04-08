@@ -2,20 +2,25 @@
 
 {% block content %}
 
-<form class="register-form active" method="post">
-    {% csrf_token %}
-    <input type="text" placeholder="Имя" name="first_name">
-    <input type="text" placeholder="Фамилия" name="last_name">
-    <input type="text" placeholder="Отчество" name="patronymic">
-    <input type="text" placeholder="Логин" name="username">
-    <input type="email" placeholder="Электронная почта" name="email">
-    <input type="password" placeholder="Пароль" name="password1">
-    <input type="password" placeholder="Повторите пароль" name="password2">
-    <div class="privacy-policy">
-        <input type="checkbox" name="privacy-policy" id="privacy-policy">
-        <label for="privacy-policy">Я прочитал и согласен на <a href="">обработкой персональных данных</a></label>
+<div class='forms'>
+    <div class="form-switcher">
+        <div class="register-switch active">Регистрация</div>
     </div>
-    <button type="submit">Зарегистрироваться</button>
-</form>
 
+    <form class="register-form active" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Имя" name="first_name" required>
+        <input type="text" placeholder="Фамилия" name="last_name" required>
+        <input type="text" placeholder="Отчество" name="patronymic" required>
+        <input type="text" placeholder="Логин" name="username" required>
+        <input type="email" placeholder="Электронная почта" name="email" required>
+        <input type="password" placeholder="Пароль" name="password1" required>
+        <input type="password" placeholder="Повторите пароль" name="password2" required>
+        <div class="privacy-policy">
+            <input type="checkbox" name="privacy-policy" id="privacy-policy" required>
+            <label for="privacy-policy">Я прочитал и согласен на <a href="">обработкой персональных данных</a></label>
+        </div>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+</div>
 {% endblock %}

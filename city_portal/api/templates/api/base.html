@@ -50,14 +50,8 @@
                 <h2>Последняя решенная проблема</h2>
                 {% show_post %}
             </div>
-            <div class='forms'>
-                <div class="form-switcher">
-                    <div class="register-switch active">Регистрация</div>
-                    <div class="login-switch">Вход</div>
-                </div>
                 {% block content %}
                 {% endblock %}
-            </div>
             <script>
                     const registerSwitch = document.querySelector('.register-switch');
                     const loginSwitch = document.querySelector('.login-switch');

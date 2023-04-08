@@ -4,9 +4,9 @@ from django.contrib.auth.models import User
 
 
 class RegisterUserForm(UserCreationForm):
-    patronymic = forms.CharField(max_length=20, widget=forms.TextInput(attrs={'placeholder': 'Отчество'}))
-    password1 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Пароль'}))
-    password2 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Повторите пароль'}))
+    patronymic = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Отчество'}))
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Пароль'}))
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Повторите пароль'}))
 
     class Meta:
         model = User
