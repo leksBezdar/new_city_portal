@@ -1,0 +1,12 @@
+{% extends 'api/base.html' %}
+
+{% block login %}
+
+<form class="login-form" method='post'>
+    {% csrf_token %}
+    <input type="text" placeholder="Имя пользователя" name="username">
+    <input type="password" placeholder="Пароль" name="password">
+    <button type="submit">Войти</button>
+</form>
+
+{% endblock %}
