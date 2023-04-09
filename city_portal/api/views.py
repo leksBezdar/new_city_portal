@@ -1,13 +1,13 @@
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, logout, login as auth_login
 from django.contrib.auth.forms import AuthenticationForm
 from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect
 from .forms import RegisterUserForm
-from django.contrib.auth import login as auth_login
 
 
 def home(request):
     return render(request, "api/base.html")
+
 
 def regist(request):
     data = {}
@@ -44,6 +44,11 @@ def login(request):
     form = AuthenticationForm()
     context['login_form'] = form
     return render(request, 'api/login.html', context)
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
 
 
 def pageNotFound(request, exception):

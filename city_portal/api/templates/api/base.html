@@ -29,14 +29,17 @@
                 одна заявка - одно решение!"
             </h1>
         </div>
-
+        {% if request.user.is_authenticated %}
+        <li>{{ user.username }} | <a href="{% url 'logout' %}">Выйти</a></li>
+        {% else %}
+        {% endif %}
         <div class="hamburger-menu">
             <input id="menu__toggle" type="checkbox"/>
             <label class="menu__btn" for="menu__toggle">
                 <span></span>
             </label>
             <ul class="menu__box">
-                <li><a class="menu__item" href="home">Главная</a></li>
+                <li><a class="menu__item" href="/">Главная</a></li>
                 <li><a class="menu__item" href="application">Заявки</a></li>
                 <li><a class="menu__item" href="team">Команда</a></li>
                 <li><a class="menu__item" href="contacts">Контакты</a></li>
@@ -50,32 +53,8 @@
                 <h2>Последняя решенная проблема</h2>
                 {% show_post %}
             </div>
-                {% block content %}
-                {% endblock %}
-            <script>
-                    const registerSwitch = document.querySelector('.register-switch');
-                    const loginSwitch = document.querySelector('.login-switch');
-                    const registerForm = document.querySelector('.register-form');
-                    const loginForm = document.querySelector('.login-form');
-
-                    registerSwitch.addEventListener('click', () => {
-                        registerSwitch.classList.add('active');
-                        loginSwitch.classList.remove('active');
-                        registerForm.classList.add('active');
-                        loginForm.classList.remove('active');
-                    });
-
-                    loginSwitch.addEventListener('click', () => {
-                        loginSwitch.classList.add('active');
-                        registerSwitch.classList.remove('active');
-                        loginForm.classList.add('active');
-                        registerForm.classList.remove('active');
-                    });
-
-
-
-            </script>
-
+            {% block content %}
+            {% endblock %}
         </div>
     </div>
     </main>
@@ -118,6 +97,8 @@
                         });
                         map.geoObjects.add(placemark);
                     });
+
+
 
             </script>
 
