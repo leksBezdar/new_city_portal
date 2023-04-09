@@ -18,7 +18,7 @@
     <header>
         <div class="logo">
             <a href="#" alt="???">
-                <img src="{% static 'icons/city-improvement-low-resolution-logo-white-on-transparent-background.png' %}"
+                <img src="{% static 'logos/logo.png' %}"
                      alt="Logo"/>
             </a>
         </div>
@@ -29,10 +29,6 @@
                 одна заявка - одно решение!"
             </h1>
         </div>
-        {% if request.user.is_authenticated %}
-        <li>{{ user.username }} | <a href="{% url 'logout' %}">Выйти</a></li>
-        {% else %}
-        {% endif %}
         <div class="hamburger-menu">
             <input id="menu__toggle" type="checkbox"/>
             <label class="menu__btn" for="menu__toggle">
@@ -53,8 +49,11 @@
                 <h2>Последняя решенная проблема</h2>
                 {% show_post %}
             </div>
+            {% if request.user.is_authenticated %}
+            {% else %}
             {% block content %}
             {% endblock %}
+            {% endif %}
         </div>
     </div>
     </main>
@@ -97,6 +96,7 @@
                         });
                         map.geoObjects.add(placemark);
                     });
+
 
 
 
