@@ -1,16 +1,19 @@
+import json
+
 from django.contrib.auth import logout
-import re
 from django.contrib.auth.views import LoginView
-from django.http import HttpResponseNotFound
+from django.http import HttpResponseNotFound, HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, FormView
 
 from .forms import RegisterUserForm, LoginUserForm
+from django.views.decorators.cache import cache_control
 
 
 def profile(request):
     return render(request, "api/profile.html")
+
 
 def application(request):
     return render(request, "api/application.html")
@@ -29,15 +32,8 @@ class RegisterUser(CreateView):
     template_name = 'api/registr.html'
     success_url = reverse_lazy('login')
 
-    # def clean(self):
-    #     fio_pattern = re.compile(r'^[?!,.а-яА-ЯёЁ0-9\s]+$')
-    #     data_f = self.cleaned_data['first_name']
-    #     data_i = self.cleaned_data['first_name']
-    #     data_o = self.cleaned_data['first_name']
-    #     if self.
-    #     return redirect('login')
 
-
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def logout_user(request):
     logout(request)
     return redirect('login')
