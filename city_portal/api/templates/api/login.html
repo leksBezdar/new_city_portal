@@ -9,7 +9,7 @@
 
     <form class="login-form active" method='post'>
         {% csrf_token %}
-        <input type="text" placeholder="Имя пользователя" name="username" required>
+        <input type="text" placeholder="Логин" name="username" required>
         <input type="password" placeholder="Пароль" name="password" required>
         <a href="{% url 'regist' %}">Регистрация</a>
         <button type="submit">Войти</button>

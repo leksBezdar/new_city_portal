@@ -39,6 +39,9 @@
                 <li><a class="menu__item" href="application">Заявки</a></li>
                 <li><a class="menu__item" href="team">Команда</a></li>
                 <li><a class="menu__item" href="contacts">Контакты</a></li>
+                {% if request.user.is_authenticated %}
+                <li>{{ user.username }} | <a href="{% url 'logout' %}">Выйти</a></li>
+                {% endif %}
             </ul>
         </div>
     </header>
@@ -96,6 +99,7 @@
                         });
                         map.geoObjects.add(placemark);
                     });
+
 
 
 

@@ -1,5 +1,5 @@
-from django.contrib.auth import authenticate, logout, login as auth_login
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import logout
+import re
 from django.contrib.auth.views import LoginView
 from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect
@@ -29,10 +29,13 @@ class RegisterUser(CreateView):
     template_name = 'api/registr.html'
     success_url = reverse_lazy('login')
 
-    def form_valid(self, form):
-        user = form.save()
-        auth_login(self.request, user)
-        return redirect('login')
+    # def clean(self):
+    #     fio_pattern = re.compile(r'^[?!,.а-яА-ЯёЁ0-9\s]+$')
+    #     data_f = self.cleaned_data['first_name']
+    #     data_i = self.cleaned_data['first_name']
+    #     data_o = self.cleaned_data['first_name']
+    #     if self.
+    #     return redirect('login')
 
 
 def logout_user(request):
