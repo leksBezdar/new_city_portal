@@ -21,7 +21,7 @@ def application(request):
 
 class LoginUser(LoginView):
     form_class = LoginUserForm
-    template_name = 'api/login.html'
+    template_name = 'api/login_or_reg.html'
 
     def get_success_url(self):
         return reverse_lazy('profile')
@@ -29,14 +29,20 @@ class LoginUser(LoginView):
 
 class RegisterUser(CreateView):
     form_class = RegisterUserForm
-    template_name = 'api/registr.html'
-    success_url = reverse_lazy('login')
+    template_name = 'api/login_or_reg.html'
+    success_url = reverse_lazy('profile')
+
+
+def login_or_reg(request, *args, **kwargs):
+    if 'password2' in request.POST:
+        return RegisterUser.as_view()
+    return LoginUser.as_view()
 
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def logout_user(request):
     logout(request)
-    return redirect('login')
+    return redirect('home')
 
 
 def pageNotFound(request, exception):
