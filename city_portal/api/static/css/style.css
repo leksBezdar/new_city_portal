@@ -298,16 +298,27 @@ header {
 
 .form-switcher .register-switch {
   transition: 0.5s;
+  border-radius: var(--border) 0 0 var(--border);
 }
 
 .form-switcher .login-switch {
   transition: 0.5s;
+  border-radius: 0 var(--border) var(--border) 0;
 }
 
 .form-switcher div {
   color: white;
-  font-size: 35px;
-  cursor: default;
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: var(--border);
+  cursor: pointer;
+}
+
+.form-switcher div.active {
+  color: black;
+  background-color: #f2f2f2;
+  border-bottom: none;
 }
 
 .register-form,
