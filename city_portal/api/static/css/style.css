@@ -296,12 +296,12 @@ header {
   margin-bottom: 20px;
 }
 
-.form-switcher .register-switch {
+.form-switcher .login-switch {
   transition: 0.5s;
   border-radius: var(--border) 0 0 var(--border);
 }
 
-.form-switcher .login-switch {
+.form-switcher .register-switch {
   transition: 0.5s;
   border-radius: 0 var(--border) var(--border) 0;
 }
